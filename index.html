@@ -1,57 +1,191 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta httpe-equiv="X-UA-Compatble" content="IE=edge" />
-    <meta name="viweport" content="widht=device-width, initial-scale=1.0" />
-    <title>Pronto</title>
 
-    <!--css link -->
-    <link rel="stylesheet" href="./css/loadingpage.css" />
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyC Portfolio Website</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 
-<section class="container">
-  <img src="./background2.jpg" alt="" class="image" />
-  <header>Coming Soon Page</header>
-  <p> Our website is under construction. We are working hard to improve Our
-  webiste and we will be ready to launch after</p>
-
-  <!--clases for the clock-->
-  <div class="time-content">
-    <div class="time days">
-      <span class="number"></span>
-      <span class="text">days</span>
+</head>
+<body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
     </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">MyCTechno<span>logies.</span></a></div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Home</a></li>
+                <li><a href="#about" class="menu-btn">About Us</a></li>
+                <li><a href="#services" class="menu-btn">Services</a></li>
+                <li><a href="#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-    <div class="time hours">
-      <span class="number"></span>
-      <span class="text">hours</span>
-    </div>
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello, we are</div>
+                <div class="text-2">MyC</div>
+                <div class="text-3">And we can <span class="typing"></span></div>
+                <a href="#">Hire us</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="time minutes">
-        <span class="number"></span>
-        <span class="text">minutes</span>
-      </div>
-    <div class="time seconds">
-      <span class="number"></span>
-      <span class="text">seconds</span>
-    </div>
-    </div>
+    <!-- about us section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">About us</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="/logo/MyC.png" alt="">
+                </div>
+                <div class="column right">
+                    <div class="text">We are MyC and We Can  <span class="typing-2"></span></div>
+                    <p>Welcome to our company! We specialize in computer repair, website creation, and desktop customization. Whether you need help fixing your computer, building a professional website, or customizing your desktop to fit your unique style, we're here to help.
+                    With our expertise and dedication to quality service, we'll help you get the most out of your technology. Contact us today to get started!
+                    </p>
+                    <!-- <a href="#">Download CV</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="email-content">
-      <p>Subscribe now to get notification of when the release day is!</p>
+    <!-- services section start -->
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">Our services</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="text">Web Design</div>
+                        <p>Search engine optimization (SEO), Customer support, Security measures, Performance optimization, Analytics and monitoring, Updates.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-lock"></i>
+                        <div class="text">Cyber-Security</div>
+                        <p>Threat analysis, Vulnerability assessment, Incident response, Security training, Security monitoring, Security policy development.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-wrench"></i>
+                        <div class="text">Maintenance</div>
+                        <p>Regular updates, Disk cleanup, Virus and malware scans, Hardware checks, Regular backups, Dusting and cleaning, Customising and Repairing.</p>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </section>
 
-      <div class="input-box">
-        <input type="email" placeholder="Enter your email" />
-        <button>Notify Me</button>
+     <!-- teams section start -->
+     <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">Our team</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="/profile/profilem.jpg" alt="">
+                        <div class="text">Manuel</div>
+                        <p>As an experienced tech enthusiast, I have developed a diverse range of skills that enable me to tackle a variety of hardware and software-related challenges. With expertise in building, repairing, and installing laptops and PCs
+                            So whether you're looking to build a new computer, fix a hardware issue, or develop a sleek and user-friendly website, I am confident that I can deliver effective solutions that meet your needs..</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="/profile/profile2.png" alt="">
+                        <div class="text">Cristian</div>
+                        <p> I am a highly skilled cybersecurity professional with a strong background in computer science. With my extensive knowledge of cybersecurity concepts and techniques, as well as my experience building custom PCs and repairing laptops, I am well-equipped to tackle any technology challenge. 
+                            In addition, my expertise in data security and privacy enables me to help organizations safeguard their sensitive information from cyber threats. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      </div>
-    </div>
-</section>
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact us</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Get in Touch</div>
+                    <p>We're always happy to hear from you! Whether you have a question, feedback, or just want to say hello, please don't hesitate to get in touch with us. 
+                        We're here to help and we'll do our best to respond to your inquiry as soon as possible. 
+                        You can reach us via phone, email, or by filling out the contact form on your right. We look forward to hearing from you!.</p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Name</div>
+                                <div class="sub-title">MyC Technologies</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Address</div>
+                                <div class="sub-title">United Kingdom, London</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title">info@myctechnologies.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="text">Message me</div>
+                    <form action="mailto:info@myctechnologies.com">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- javascript -->
-<script src="js/javascript.js"></script>
+    <!-- footer section start -->
+    <footer>
+        <span>Created By <a href="www.myctechnologies.com">myctechnologies</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
+    </footer>
 
-  </body>
+    <script src="js/listener.js"></script>
+</body>
 </html>
