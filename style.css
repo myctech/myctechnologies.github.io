@@ -306,7 +306,7 @@ section .title::after{
     content: "who with us";
 }
 .teams .carousel .card{
-    background: #222;
+    background: #fff;
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
