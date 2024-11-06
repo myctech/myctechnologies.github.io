@@ -1,278 +1,69 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyC Website</title>
-    <meta name="description" content="Our mission at MyC is to provide reliable and efficient technology solutions to our clients.">
-    <meta name="keywords" content="repair computer, web design, cybersecurity, myctechnologies." />
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-</head>
-
+    <title>Coming Soon</title>
     
+    <!-- Importing Crimson Text Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class="scroll-up-btn">
-        <i class="fas fa-angle-up"></i>
-    </div>
-    <nav class="navbar">
-        <div class="max-width">
-            <div class="logo"><a href="#">MyCTechno<span>logies</span></a></div>
-            <ul class="menu">
-                <li><a href="#home" class="menu-btn">Home</a></li>
-                <li><a href="#about" class="menu-btn">About Us</a></li>
-                <li><a href="#services" class="menu-btn">Services</a></li>
-                <li><a href="#teams" class="menu-btn">Our Team</a></li>
-                <li><a href="#price" class="menu-btn">Prices</a></li>
-            </ul>
-            <div class="media-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/myctechnologies/"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
+    <div class="coming-soon-container">
+        <div class="image-container">
+            <!-- Background Image -->
+            <img src="/img/myc5.png" alt="myclogo" class="background-image">
         </div>
-     
-    </nav>
-    
-
-    <!-- home section start -->
-    <section class="home" id="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hello, we are</div>
-                <div class="text-2">MyC</div>
-                <div class="text-3">And we can <span class="typing"></span></div>
-               <!-- <a href="#">Hire us</a> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- about us section start -->
-    <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About us</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="/logo/myc 5.png" alt="">
-                </div>
-                <div class="column right">
-                    <div class="text">We are MyC and We Can  <span class="typing-2"></span></div>
-                    <p>Welcome to our company! We specialize in computer repair, website creation, and desktop customization. Whether you need help fixing your computer, building a professional website, 
-                        or customizing your desktop to fit your unique style, we're here to assist you.
-                        With our expertise and dedication to providing quality service, we'll help you get the most out of your technology. Contact us today to get started!
-                    </p>
-                    <!-- <a href="#">Download CV</a> -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- services section start -->
-    <section class="services" id="services">
-        <div class="max-width">
-            <h2 class="title">Our Services</h2>
-            <div class="serv-content">
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-paint-brush"></i>
-                        <div class="text">Web Design</div>
-                        <p>Search engine optimization (SEO), Customer support, Security measures, Performance optimization, Analytics and monitoring, Updates.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-lock"></i>
-                        <div class="text">Cyber-Security</div>
-                        <p>Threat analysis, Vulnerability assessment, Incident response, Security training, Security monitoring, Security policy development.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-wrench"></i>
-                        <div class="text">Maintenance</div>
-                        <p>Regular updates, Disk cleanup, Virus and malware scans, Hardware checks, Regular backups, Dusting and cleaning, Customising and Repairing.</p>
-                    </div>
-                </div>
-               </div>
-            </div>
-        </div>
-    </section>
-
-     <!-- teams section start -->
-     <section class="teams" id="teams">
-        <div class="max-width">
-            <h2 class="title">The Team</h2>
-            <div class="carousel owl-carousel">
-                <div class="card">
-                    <div class="box">
-                        <img src="./profile/profilem.jpg" alt="">
-                        <div class="text">Manuel</div>
-                        <p>As an experienced tech enthusiast, I have developed a diverse range of skills that enable me to tackle a variety of hardware and software-related challenges. 
-                            With expertise in building, repairing, and installing laptops and PCs, I am confident that I can deliver effective solutions to meet your needs. Whether you're 
-                            looking to build a new computer, fix a hardware issue, or develop a sleek and user-friendly website, I am well-equipped to provide the necessary assistance.</p> <br>
-                        <p> I have completed BSc Hons in Computer Science and a MSc in Computer Forensics and Cyber Security </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="/profile/profilec.jpg" alt="">
-                        <div class="text">Cristian</div>
-                        <p> I am a highly skilled cybersecurity professional with a strong background in computer science. With my extensive knowledge of cybersecurity concepts and techniques, 
-                            as well as my experience in building custom PCs and repairing laptops, I am well-equipped to tackle any technology challenge. Additionally, my expertise in data security 
-                            and privacy enables me to assist organizations in safeguarding their sensitive information from cyber threats. </p> <br>
-                            <p> I hold a BSc Hons in Computer Science and an MSc in Computer Forensics and Cybersecurity </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Price Section start-->
-
-   
-    <section class="price" id="price">
-      <h2 class="title">Prices</h2>
+        
+        <!-- Main Content -->
         <div class="content">
-            <div class="card one">
-              <div class="top">
-                <div class="title">Web Design From</div>
-                <div class="price-sec">
-                  <span class="dollar">£</span>
-                  <span class="price">400</span>
-                </div>
-              </div>
-              <div class="info"></div>
-              <div class="details">
-                <div class="one">
-                  <span>Custom Domain</span>
-                </div>
-                <div class="one">
-                  <span>10GB Local Storage</span>
-                </div>
-                <div class="one">
-                  <span>1 Year Tech Support</span>
-                </div>
-                <div class="one">
-                  <span>SEO Optimization</span>
-                </div>
-                <div class="one">
-                  <span>*Price may vary depending in customer requirements</span>
-                </div>
-              </div>
+            <h1>ReBuilding !!!!</h1>
+            <p>Meanwhile, please sign up for our newsletter.</p>
+            <form id="newsletterForm" class="newsletter-form" action="https://formspree.io/f/xnnqdvdn" method="POST" novalidate>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                <input type="hidden" name="_subject" value="New Newsletter Subscription">
+                <button type="submit">Subscribe</button>
+                <p id="error-message" style="color: red; display: none;">Please enter a valid email address.</p>
+            </form>
+            
+            <script>
+                document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+                    const emailField = document.getElementById("email");
+                    const errorMessage = document.getElementById("error-message");
+            
+                    // Regular expression for basic email validation
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+                    if (!emailPattern.test(emailField.value)) {
+                        event.preventDefault(); // Prevent form submission
+                        errorMessage.style.display = "block"; // Show error message
+                        errorMessage.textContent = "Please enter a valid email address.";
+                    } else {
+                        errorMessage.style.display = "none"; // Hide error message if valid
+                    }
+                });
+            </script>
+            <div id="form-success-message" style="display:none; color: green; margin-top: 10px;">
+                Thank you for subscribing!
             </div>
-            <div class="card two">
-              <div class="top">
-                <div class="title">PC Repair From</div>
-                <div class="price-sec">
-                  <span class="dollar">£</span>
-                  <span class="price">50</span>
-                </div>
-              </div>
-              <div class="info"></div>
-              <div class="details">
-                <div class="one">
-                  <span>General Cleaning</span>
-                </div>
-                <div class="one">
-                  <span>Operative System Reinstallation</span>
-                </div>
-                <div class="one">
-                  <span>SSD Replacement</span>
-                </div>
-                <div class="one">
-                  <span>Memory (RAM) Upgrade</span>
-                </div>
-                <div class="one">
-                  <span>*Price may vary depending in customer requirements</span>
-                </div>
-              </div>
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/myctechnologies?igsh=MXJiNWN2dm1haXN6ag%3D%3D&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/people/Myctechnologies/61561119772758/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:info@myctechnologies.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>                
             </div>
-            <div class="card three">
-              <div class="top">
-                <div class="title">Security Asset From</div>
-                <div class="price-sec">
-                  <span class="dollar">£</span>
-                  <span class="price">1000</span>
-                </div>
-              </div>
-              <div class="info"></div>
-              <div class="details">
-                <div class="one">
-                  <span>Vulnerability Assessment</span>
-                </div>
-                <div class="one">
-                  <span>Penetration Testing</span>
-                </div>
-                <div class="one">
-                  <span>Compliance Audit</span>
-                </div>
-                <div class="one">
-                  <span>Risk Assessment</span>
-                </div>
-                <div class="one">
-                  <span>*Price may vary depending in customer requirements</span>
-                </div>
-              </div>
-            </div>
-          </div>
-    </section>
- 
-    <footer>
-      <div class="main-content">
-        <div class="left box">
-          <h2>About us</h2>
-          <div class="content">
-            <p>
-              Welcome to our wonderful community! We're absolutely thrilled to have you join us. <br><br> Whether you're bubbling with questions, keen to share feedback, or simply fancy 
-               saying a friendly hello, rest assured, we're here for you every step of the way. <br><br> Your message is incredibly valuable to us, and we're fully committed to providing 
-               you with prompt responses to ensure you receive the support you deserve. <br><br>
-              Feel free to get in touch via phone, WhatsApp, or drop us an email. We're eagerly looking forward to hearing from you and are ready to offer whatever assistance you may need!</p>
-          </div>
         </div>
-
-        <div class="center box">
-          <h2>Address</h2>
-          <div class="content">
-            <div class="place">
-              <span class="fas fa-map-marker-alt"></span>
-              <span class="text">United Kingdom, London</span>
-            </div>
-            <div class="phone">
-              <span class="fab fa-whatsapp"></span>
-              <span class="text">+44 7503577956</span>
-            </div>
-            <div class="phone">
-              <span class="fab fa-whatsapp"></span>
-              <span class="text">+44 7514679634</span>
-            </div>
-            <div class="email">
-              <span class="fas fa-envelope"></span>
-              <span class="text">info@myctechnologies.com</span>
-            </div>
-          </div>
-        </div>
-
-      
-      </div>
-      <div class="bottom">
-        <center>
-          <span>Created By <a href="www.myctechnologies.com">myctechnologies</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
-        </center>
-      </div>
-    </footer>
+    </div>
     
-
-    <script src="js/listener.js"></script>
+    
+    <!-- Internal JavaScript -->
+    <script src="/script.js"></script>
 </body>
 </html>
