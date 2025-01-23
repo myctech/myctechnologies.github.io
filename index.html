@@ -60,9 +60,35 @@
                 </div>                
             </div>
         </div>
+          <!-- div for the timer-->
+        <h1><div class="countdown-timer" id="timer"></div></h1> 
+      </div>
     </div>
     
-    
+    <script>
+      // JavaScript for the countdown timer
+      function updatetimer() {
+        const today = new Date();
+        const targetDate = new Date(today.getFullYear(), 2, 1); // March 1st
+        const timeDifference = targetDate - today;
+   
+        if (timeDifference > 0) {
+          const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+   
+          document.getElementById("timer").textContent = 
+            `${days} Days, ${hours} Hours, ${minutes} Minutes, ${seconds} Seconds`;
+        } else {
+          document.getElementById("timer").textContent = "The day has arrived!";
+        }
+      }
+   
+      // Update the countdown every second
+      setInterval(updatetimer, 1000);
+      updatetimer();
+  </script>
     <!-- Internal JavaScript -->
     <script src="/script.js"></script>
 </body>
