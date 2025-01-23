@@ -104,6 +104,33 @@ body {
     color: #555; /* Hover color */
 }
 
+/*Set the css for the timer */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fafafa;
+  }
+  
+  .countdown-timer {
+    text-align: center;
+    padding: 5px;
+    border: 2px solid #fafafa;
+    border-radius: 10px;
+    background-color: #fafafa;
+    
+  }
+  
+  #timer {
+    font-size: 18px;
+    color: #333;
+  }
+/*end of the timer*/  
+
 /* Responsive Design */
 @media (max-width: 600px) {
     .content h1 {
