@@ -1,0 +1,20 @@
+# Allow all search engines to crawl the site
+User-agent: *
+
+# Allow all pages to be indexed
+Allow: /
+
+# Block sensitive and unnecessary directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
+Disallow: /*.php$   # Blocks all PHP files to prevent indexing of backend scripts
+
+# Allow essential assets (important for SEO)
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Specify the sitemap location for better indexing
+Sitemap: https://myctechnologies.com/sitemap.xml
