@@ -1,0 +1,68 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Validate required files
+        run: |
+          test -f index.html
+
+      - name: Check for obvious secret patterns
+        run: |
+          ! grep -RIE "(api[_-]?key|secret|password|passwd|token|private[_-]?key|BEGIN RSA|BEGIN OPENSSH)" \
+            --exclude-dir=.git \
+            --exclude=pages.yml \
+            . || exit 1
+
+      - name: Check large files
+        run: |
+          find . -type f -not -path "./.git/*" -size +5M -print -exec false {} +
+
+  deploy:
+    if: github.event_name == 'push'
+    needs: validate
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
