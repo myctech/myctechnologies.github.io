@@ -1,4 +1,4 @@
-name: Deploy static site to GitHub Pages
+name: Build and deploy to GitHub Pages
 
 on:
   push:
@@ -15,31 +15,52 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Validate required files
-        run: |
-          test -f index.html
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Check for obvious secret patterns
         run: |
           ! grep -RIE "(api[_-]?key|secret|password|passwd|token|private[_-]?key|BEGIN RSA|BEGIN OPENSSH)" \
             --exclude-dir=.git \
+            --exclude-dir=.next \
+            --exclude-dir=node_modules \
+            --exclude-dir=out \
             --exclude=pages.yml \
             . || exit 1
 
       - name: Check large files
         run: |
-          find . -type f -not -path "./.git/*" -size +5M -print -exec false {} +
+          find . -type f \
+            -not -path "./.git/*" \
+            -not -path "./.next/*" \
+            -not -path "./node_modules/*" \
+            -not -path "./out/*" \
+            -size +5M -print -exec false {} +
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: out
 
   deploy:
     if: github.event_name == 'push'
-    needs: validate
+    needs: build
     runs-on: ubuntu-latest
 
     permissions:
@@ -52,17 +73,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: .
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
