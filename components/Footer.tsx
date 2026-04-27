@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone, Shield } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, MapPin, Phone } from 'lucide-react'
 
 const services = [
   'Computer Repair',
@@ -27,14 +28,14 @@ export function Footer() {
 
           {/* Brand + contact */}
           <div className="lg:col-span-2 space-y-5">
-            <a href="#top" className="inline-flex items-center gap-2.5">
-              <div aria-hidden="true" className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shadow-sm">
-                <Shield size={15} className="text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-bold tracking-tight text-slate-100">
-                MyC{' '}
-                <span className="text-indigo-400">Technologies</span>
-              </span>
+            <a href="#top" aria-label="MyC Technologies — back to top" className="inline-flex items-center">
+              <Image
+                src="/logo.png"
+                alt="MyC Technologies"
+                width={1156}
+                height={287}
+                className="h-7 w-auto invert"
+              />
             </a>
 
             <p className="text-sm leading-relaxed max-w-sm">
