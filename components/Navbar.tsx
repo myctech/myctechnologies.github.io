@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useId, useState } from 'react'
-import { Menu, Shield, X } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from './ThemeToggle'
 
 const navLinks = [
@@ -41,15 +42,15 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
 
-          {/* Logo — icon is decorative; link text provides the accessible name */}
-          <a href="#top" aria-label="MyC Technologies — back to top" className="flex items-center gap-2.5 shrink-0">
-            <div aria-hidden="true" className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shadow-sm">
-              <Shield size={15} className="text-white" strokeWidth={2.5} />
-            </div>
-            <span className="font-bold tracking-tight text-slate-900 dark:text-slate-50">
-              MyC{' '}
-              <span className="text-indigo-600 dark:text-indigo-400">Technologies</span>
-            </span>
+          <a href="#top" aria-label="MyC Technologies — back to top" className="flex items-center shrink-0">
+            <Image
+              src="/logo.png"
+              alt="MyC Technologies"
+              width={1156}
+              height={287}
+              className="h-8 w-auto dark:invert"
+              priority
+            />
           </a>
 
           {/* Desktop nav */}
