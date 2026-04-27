@@ -14,17 +14,17 @@ Table of contents
 12. portfolio
 --------------------------------------------- */
 
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div,
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -126,10 +126,10 @@ img {
   height: auto; /* Maintain aspect ratio */
 }
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -238,10 +238,10 @@ body {
   border-bottom: 2px solid #5DADE2!important;
 }
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 .background-header {
   background-color: #5DADE2!important;
@@ -750,7 +750,7 @@ header
     font-size: 14px;
     top: 15px;
   }
-  .header-area .main-nav .nav li.submenu:hover ul, 
+  .header-area .main-nav .nav li.submenu:hover ul,
   .header-area .main-nav .nav li.submenu:focus ul {
     height: 0px;
   }
@@ -762,10 +762,10 @@ header
   }
 }
 
-/* 
+/*
 ---------------------------------------------
 Banner Style
---------------------------------------------- 
+---------------------------------------------
 */
 .main-banner {
   background-repeat: no-repeat;
@@ -847,10 +847,10 @@ Banner Style
   max-width: 593px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Features Style
---------------------------------------------- 
+---------------------------------------------
 */
 #features {
   padding-top: 130px;
@@ -893,10 +893,10 @@ Features Style
   background-color: rgba(255,255,255,0.3);
 }
 
-/* 
+/*
 ---------------------------------------------
 features icons white edition
---------------------------------------------- 
+---------------------------------------------
 */
 .first-feature:hover .icon {
   background-image: url(../images/reachoutwhite.png);
@@ -929,10 +929,10 @@ features icons white edition
   margin-bottom: 30px;
 }
 
-/* 
+/*
 ---------------------------------------------
 icons on top
---------------------------------------------- 
+---------------------------------------------
 */
 .features-item .first-number h6 {
   background-image: url(../images/features-number-01.png);
@@ -950,10 +950,10 @@ icons on top
   background-image: url(../images/features-number-04.png);
 }
 
-/* 
+/*
 ---------------------------------------------
 features icons black edition
---------------------------------------------- 
+---------------------------------------------
 */
 .first-feature .icon {
   background-image: url(../images/reachoutblack.png);
@@ -1109,8 +1109,8 @@ features icons black edition
   text-transform: uppercase;
 }
 
-/* This for loop creates the  necessary css animation names 
-Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+/* This for loop creates the  necessary css animation names
+Due to the split circle of progress-left and progress right, we must use the animations on each side.
 */
 .progress[data-percentage="10"] .progress-right .progress-bar {
   animation: loading-1 1.5s linear forwards;
@@ -1251,10 +1251,10 @@ Due to the split circle of progress-left and progress right, we must use the ani
   margin-bottom: 1em;
 }
 
-/* 
+/*
 ---------------------------------------------
 About Us Style
---------------------------------------------- 
+---------------------------------------------
 */
 #about {
   padding-top: 130px;
@@ -1286,10 +1286,10 @@ About Us Style
   margin: 40px 0px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Services Style
---------------------------------------------- 
+---------------------------------------------
 */
 .our-services {
   padding-top: 120px;
@@ -1345,10 +1345,10 @@ Services Style
   margin-bottom: 15px;
 }
 
-/* 
+/*
 ---------------------------------------------
 Portfolio
---------------------------------------------- 
+---------------------------------------------
 */
 .our-portfolio {
   padding-top: 100px;
@@ -1445,10 +1445,10 @@ Portfolio
   border-color: #5DADE2;
 }
 
-/* 
+/*
 ---------------------------------------------
 contact
---------------------------------------------- 
+---------------------------------------------
 */
 .contact-us {
   margin-top: 90px;
@@ -1570,10 +1570,10 @@ form#contact button:hover {
   border-bottom: 2px solid #5DADE2!important;
 }
 
-/* 
+/*
 ---------------------------------------------
 Footer Style
---------------------------------------------- 
+---------------------------------------------
 */
 footer p {
   text-align: center;
@@ -1589,10 +1589,10 @@ footer p a:hover {
   color: #4771cb;
 }
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 1200px) {
@@ -1672,7 +1672,7 @@ responsive
   .service-item {
     text-align: center;
     padding: 30px;
-    
+
   }
   .service-item .icon {
     float: none;
