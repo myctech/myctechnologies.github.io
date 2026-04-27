@@ -368,3 +368,7 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 .DS_Store
+
+# Environment variables — never commit real values
+.env.local
+.env*.local
