@@ -41,7 +41,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#home" style={{ display:'flex', alignItems:'center', textDecoration:'none' }}>
           <Image
-            src="/logo.png"
+            src="/logohori.png"
             alt="MyC Technologies"
             width={1156}
             height={287}
