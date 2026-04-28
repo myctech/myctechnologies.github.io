@@ -1,5 +1,5 @@
-// UNDER CONSTRUCTION — replace this file with page.full.tsx when the site is ready to launch.
-// All section components remain in components/sections/ and are unchanged.
+// UNDER CONSTRUCTION — replace with page.full.tsx when the site is ready to launch.
+// Rename: cp app/page.full.tsx app/page.tsx
 
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -11,83 +11,76 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="relative min-h-svh flex flex-col items-center justify-center px-4 py-16 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50">
+    <div style={{ position:'relative', minHeight:'100svh', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', padding:'4rem 1rem' }}>
 
-      {/* Background blobs */}
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-indigo-100/60 dark:bg-indigo-950/40 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-violet-100/40 dark:bg-violet-950/30 blur-3xl" />
+      {/* Background orbs */}
+      <div className="bg-orbs" aria-hidden="true">
+        <div className="bg-orb bg-orb-1" />
+        <div className="bg-orb bg-orb-2" />
+        <div className="bg-orb bg-orb-3" />
       </div>
+      <div className="bg-grid" aria-hidden="true" />
 
-      <div className="w-full max-w-md text-center space-y-10">
+      <div style={{ width:'100%', maxWidth:'28rem', textAlign:'center', display:'flex', flexDirection:'column', gap:'2.5rem', position:'relative', zIndex:1 }}>
 
         {/* Logo */}
-        <div className="flex justify-center">
+        <div style={{ display:'flex', justifyContent:'center' }}>
           <Image
             src="/logo.png"
             alt="MyC Technologies"
             width={1156}
             height={287}
-            className="h-10 w-auto dark:invert"
+            className="h-10 w-auto"
             priority
           />
         </div>
 
-        {/* Eyebrow + heading */}
-        <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 dark:border-indigo-800/60 bg-indigo-50 dark:bg-indigo-950/50 px-4 py-1.5 text-xs font-semibold text-indigo-700 dark:text-indigo-300">
-            <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse motion-reduce:animate-none" />
+        {/* Badge + heading */}
+        <div style={{ display:'flex', flexDirection:'column', gap:'1rem' }}>
+          <div style={{ display:'inline-flex', alignItems:'center', gap:'0.5rem', padding:'0.45rem 1rem 0.45rem 0.625rem', borderRadius:'999px', border:'1px solid rgba(59,130,246,0.35)', background:'rgba(59,130,246,0.08)', fontSize:'0.82rem', fontWeight:600, color:'var(--accent-light)', justifyContent:'center' }}>
+            <span className="badge-glow" style={{ display:'inline-block', width:'0.5rem', height:'0.5rem', borderRadius:'50%', background:'var(--accent-light)', boxShadow:'0 0 8px var(--accent-light)' }} />
             New site coming soon
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-snug">
+          <h1 className="font-display" style={{ fontSize:'clamp(1.75rem,5vw,2.5rem)', fontWeight:700, letterSpacing:'-0.03em', lineHeight:1.15, color:'var(--text)' }}>
             We are working on{' '}
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
-              something new
-            </span>
+            <span className="text-gradient">something new</span>
           </h1>
-          <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed">
-            Our new website is on its way. We are fully operational in the
-            meantime — get in touch and we will be happy to help.
+          <p style={{ fontSize:'1rem', color:'var(--text-muted)', lineHeight:1.7 }}>
+            Our new website is on its way. We are fully operational in the meantime — get in touch and we will be happy to help.
           </p>
         </div>
 
         {/* Divider */}
-        <div aria-hidden="true" className="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent mx-auto" />
+        <div className="section-divider" aria-hidden="true" />
 
         {/* Contact */}
-        <div className="space-y-3">
+        <div style={{ display:'flex', flexDirection:'column', gap:'0.75rem' }}>
           <a
             href="mailto:info@myctechnologies.com"
-            className="flex items-center justify-center gap-2.5 w-full px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white text-sm font-semibold transition-colors shadow-md shadow-indigo-500/20"
+            className="btn-primary"
+            style={{ justifyContent:'center' }}
           >
-            <Mail size={15} aria-hidden="true" />
+            <Mail style={{width:'0.9rem',height:'0.9rem'}} aria-hidden="true"/>
             info@myctechnologies.com
           </a>
 
-          <div className="grid grid-cols-2 gap-3">
-            <a
-              href="tel:+447514679634"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-            >
-              <Phone size={14} aria-hidden="true" />
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'0.75rem' }}>
+            <a href="tel:+447514679634" className="contact-detail-card" style={{ justifyContent:'center', fontSize:'0.875rem', fontWeight:500 }}>
+              <Phone style={{width:'0.875rem',height:'0.875rem'}} aria-hidden="true"/>
               +44 7514 679634
             </a>
-            <a
-              href="tel:+447503577956"
-              className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm font-medium text-slate-700 dark:text-slate-300 hover:border-indigo-300 dark:hover:border-indigo-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-            >
-              <Phone size={14} aria-hidden="true" />
+            <a href="tel:+447503577956" className="contact-detail-card" style={{ justifyContent:'center', fontSize:'0.875rem', fontWeight:500 }}>
+              <Phone style={{width:'0.875rem',height:'0.875rem'}} aria-hidden="true"/>
               +44 7503 577956
             </a>
           </div>
         </div>
 
         {/* Location */}
-        <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 dark:text-slate-600">
-          <MapPin size={12} aria-hidden="true" />
+        <p style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'0.375rem', fontSize:'0.78rem', color:'var(--text-subtle)' }}>
+          <MapPin style={{width:'0.75rem',height:'0.75rem'}} aria-hidden="true"/>
           London, United Kingdom — IT Services &amp; Cybersecurity
         </p>
-
       </div>
     </div>
   )
