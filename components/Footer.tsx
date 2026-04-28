@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <a href="#home" style={{ display:'inline-flex', alignItems:'center', textDecoration:'none', marginBottom:'1.25rem' }}>
               <Image
-                src="/logo.png"
+                src="/logohori.png"
                 alt="MyC Technologies"
                 width={1156}
                 height={287}

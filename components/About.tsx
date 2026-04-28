@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { aboutPillars } from '@/lib/data'
 import { ArrowRight, MapPin } from 'lucide-react'
 
@@ -27,9 +28,14 @@ export default function About() {
             </span>
           </div>
 
-          <div style={{ position:'relative', zIndex:1, textAlign:'center', padding:'2rem 0' }}>
-            <div className="font-display" style={{ fontSize:'clamp(3rem,8vw,5rem)', fontWeight:700, letterSpacing:'-0.05em', lineHeight:1, background:'var(--gradient-text)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text', marginBottom:'0.75rem' }}>MyC</div>
-            <div style={{ fontSize:'0.95rem', color:'var(--text-muted)', letterSpacing:'0.1em', textTransform:'uppercase' }}>Technologies</div>
+          <div style={{ position:'relative', zIndex:1, display:'flex', alignItems:'center', justifyContent:'center', padding:'2rem 0' }}>
+            <Image
+              src="/logovertical.png"
+              alt="MyC Technologies"
+              width={1633}
+              height={1080}
+              className="w-40 h-auto"
+            />
           </div>
 
           <div style={{ position:'relative', zIndex:1, display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'0.75rem' }}>
