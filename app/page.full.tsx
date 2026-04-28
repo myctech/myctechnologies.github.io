@@ -1,41 +1,57 @@
 // Full site layout — restore by replacing app/page.tsx with this file.
-// Rename: mv app/page.full.tsx app/page.tsx
+// Rename: cp app/page.full.tsx app/page.tsx
 
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
-import { HeroSection } from '@/components/sections/HeroSection'
-import { TrustSection } from '@/components/sections/TrustSection'
-import { ServicesSection } from '@/components/sections/ServicesSection'
-import { ProcessSection } from '@/components/sections/ProcessSection'
-import { AboutSection } from '@/components/sections/AboutSection'
-import { PortfolioSection } from '@/components/sections/PortfolioSection'
-import { WhyUsSection } from '@/components/sections/WhyUsSection'
-import { ContactSection } from '@/components/sections/ContactSection'
+import Navbar    from '@/components/Navbar'
+import Hero      from '@/components/Hero'
+import TrustBar  from '@/components/TrustBar'
+import Services  from '@/components/Services'
+import Process   from '@/components/Process'
+import About     from '@/components/About'
+import Portfolio from '@/components/Portfolio'
+import WhyUs     from '@/components/WhyUs'
+import CTABanner from '@/components/CTABanner'
+import Contact   from '@/components/Contact'
+import Footer    from '@/components/Footer'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'MyC Technologies',
+  description: 'IT services company in London: computer repair, website design, cybersecurity assessments, virus removal, data backup & recovery, hardware checks, desktop customisation, and security policy development.',
+  url: 'https://myctechnologies.com',
+  areaServed: 'London, United Kingdom',
+  email: 'info@myctechnologies.com',
+  contactPoint: [
+    { '@type': 'ContactPoint', telephone: '+44 7514 679634', contactType: 'customer support' },
+    { '@type': 'ContactPoint', telephone: '+44 7503 577956', contactType: 'customer support' },
+  ],
+}
 
 export default function Home() {
   return (
     <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg focus:font-semibold focus:text-sm focus:shadow-lg"
-      >
-        Skip to main content
-      </a>
-
-      <Navbar />
-
-      <main id="main-content">
-        <HeroSection />
-        <TrustSection />
-        <ServicesSection />
-        <ProcessSection />
-        <AboutSection />
-        <PortfolioSection />
-        <WhyUsSection />
-        <ContactSection />
-      </main>
-
-      <Footer />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="bg-orbs" aria-hidden="true">
+        <div className="bg-orb bg-orb-1" />
+        <div className="bg-orb bg-orb-2" />
+        <div className="bg-orb bg-orb-3" />
+      </div>
+      <div className="bg-grid" aria-hidden="true" />
+      <div style={{ position:'relative', zIndex:0 }}>
+        <Navbar />
+        <main id="main-content">
+          <Hero />
+          <TrustBar />
+          <Services />
+          <Process />
+          <About />
+          <Portfolio />
+          <WhyUs />
+          <CTABanner />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }
