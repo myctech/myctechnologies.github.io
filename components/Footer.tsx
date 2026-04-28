@@ -1,129 +1,132 @@
 import Image from 'next/image'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, PhoneCall } from 'lucide-react'
+
+const navLinks = [
+  { label:'Services',  href:'#services'  },
+  { label:'Process',   href:'#process'   },
+  { label:'About',     href:'#about'     },
+  { label:'Portfolio', href:'#portfolio' },
+  { label:'Contact',   href:'#contact'   },
+]
 
 const services = [
-  'Computer Repair',
-  'Website Design',
-  'Cybersecurity Assessments',
-  'Desktop Customisation',
-  'Virus & Malware Removal',
-  'Data Backup & Recovery',
-  'Hardware Checks',
-  'Security Policy Development',
+  'Computer Repair','Website Design','Cybersecurity Assessments',
+  'Virus & Malware Removal','Data Backup & Recovery',
+  'Hardware Checks','Desktop Customisation','Security Policy Development',
 ]
 
-const companyLinks = [
-  { href: '#about', label: 'About Us' },
-  { href: '#process', label: 'Our Process' },
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#why-us', label: 'Why Choose Us' },
-  { href: '#contact', label: 'Contact' },
+const socialLinks = [
+  {
+    label: 'Instagram',
+    href:  'https://www.instagram.com/myctechnologies?igsh=MXJiNWN2dm1haXN6ag%3D%3D&utm_source=qr',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href:  'https://www.facebook.com/p/Myctechnologies-61561119772758/',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    ),
+  },
 ]
 
-export function Footer() {
+export default function Footer() {
+  const year = new Date().getFullYear()
   return (
-    <footer className="bg-slate-950 text-slate-400">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+    <footer style={{ borderTop:'1px solid var(--border)', background:'var(--bg-elevated)', padding:'4rem 1.5rem 2rem' }}>
+      <div style={{ maxWidth:'1200px', margin:'0 auto' }}>
+        <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:'3rem', marginBottom:'3rem' }} className="footer-grid">
 
-          {/* Brand + contact */}
-          <div className="lg:col-span-2 space-y-5">
-            <a href="#top" aria-label="MyC Technologies — back to top" className="inline-flex items-center">
+          {/* Brand */}
+          <div>
+            <a href="#home" style={{ display:'inline-flex', alignItems:'center', textDecoration:'none', marginBottom:'1.25rem' }}>
               <Image
                 src="/logo.png"
                 alt="MyC Technologies"
                 width={1156}
                 height={287}
-                className="h-7 w-auto invert"
+                className="h-8 w-auto"
               />
             </a>
-
-            <p className="text-sm leading-relaxed max-w-sm">
-              IT services for individuals and small businesses across London.
-              Security-aware, practical, and reliably delivered.
+            <p style={{ fontSize:'0.875rem', color:'var(--text-muted)', lineHeight:1.7, maxWidth:'280px', marginBottom:'1.25rem' }}>
+              IT services for businesses and individuals in London. Repair, design, cybersecurity, and recovery — under one trusted partner.
             </p>
+            <div style={{ display:'flex', flexDirection:'column', gap:'0.625rem', marginBottom:'1.25rem' }}>
+              <a href="mailto:info@myctechnologies.com" className="footer-link" style={{ display:'inline-flex', alignItems:'center', gap:'0.5rem' }}>
+                <Mail style={{width:'0.875rem',height:'0.875rem'}}/>info@myctechnologies.com
+              </a>
+              <a href="tel:+447514679634" className="footer-link" style={{ display:'inline-flex', alignItems:'center', gap:'0.5rem' }}>
+                <PhoneCall style={{width:'0.875rem',height:'0.875rem'}}/>+44 7514 679634
+              </a>
+              <a href="tel:+447503577956" className="footer-link" style={{ display:'inline-flex', alignItems:'center', gap:'0.5rem' }}>
+                <PhoneCall style={{width:'0.875rem',height:'0.875rem'}}/>+44 7503 577956
+              </a>
+            </div>
 
-            <ul className="space-y-2.5 text-sm">
-              <li>
+            {/* Social links */}
+            <div style={{ display:'flex', gap:'0.625rem' }}>
+              {socialLinks.map(s => (
                 <a
-                  href="mailto:info@myctechnologies.com"
-                  className="flex items-center gap-2.5 hover:text-slate-200 transition-colors"
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`MyC Technologies on ${s.label}`}
+                  style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', width:'2.25rem', height:'2.25rem', borderRadius:'0.625rem', border:'1px solid var(--border)', background:'var(--bg-card)', color:'var(--text-muted)', transition:'border-color 0.2s,color 0.2s' }}
+                  onMouseEnter={e=>{ const el=e.currentTarget; el.style.borderColor='var(--border-hover)'; el.style.color='var(--accent-light)'; }}
+                  onMouseLeave={e=>{ const el=e.currentTarget; el.style.borderColor='var(--border)'; el.style.color='var(--text-muted)'; }}
                 >
-                  <Mail aria-hidden="true" size={14} className="shrink-0 text-indigo-400" />
-                  info@myctechnologies.com
+                  {s.icon}
                 </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+447514679634"
-                  className="flex items-center gap-2.5 hover:text-slate-200 transition-colors"
-                >
-                  <Phone aria-hidden="true" size={14} className="shrink-0 text-indigo-400" />
-                  +44 7514 679634
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+447503577956"
-                  className="flex items-center gap-2.5 hover:text-slate-200 transition-colors"
-                >
-                  <Phone aria-hidden="true" size={14} className="shrink-0 text-indigo-400" />
-                  +44 7503 577956
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <MapPin aria-hidden="true" size={14} className="shrink-0 text-indigo-400" />
-                London, United Kingdom
-              </li>
-            </ul>
+              ))}
+            </div>
+          </div>
+
+          {/* Nav */}
+          <div>
+            <h3 style={{ fontSize:'0.78rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.16em', color:'var(--text-subtle)', marginBottom:'1.125rem' }}>Navigation</h3>
+            <nav style={{ display:'flex', flexDirection:'column', gap:'0.625rem' }}>
+              {navLinks.map(l => <a key={l.href} href={l.href} className="footer-link">{l.label}</a>)}
+            </nav>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-200 mb-5">
-              Services
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              {services.map((s) => (
-                <li key={s}>
-                  <a href="#services" className="hover:text-slate-200 transition-colors">
-                    {s}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h3 style={{ fontSize:'0.78rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.16em', color:'var(--text-subtle)', marginBottom:'1.125rem' }}>Services</h3>
+            <div style={{ display:'flex', flexDirection:'column', gap:'0.625rem' }}>
+              {services.map(s => <a key={s} href="#services" className="footer-link">{s}</a>)}
+            </div>
           </div>
 
-          {/* Company */}
+          {/* CTA */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-200 mb-5">
-              Company
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              {companyLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <a href={href} className="hover:text-slate-200 transition-colors">
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8">
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-slate-200 mb-3">
-                Follow us
-              </h4>
-              <p className="text-xs text-slate-600 italic">
-                [Social media links — add when ready]
-              </p>
+            <h3 style={{ fontSize:'0.78rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.16em', color:'var(--text-subtle)', marginBottom:'1.125rem' }}>Get started</h3>
+            <p style={{ fontSize:'0.875rem', color:'var(--text-muted)', lineHeight:1.7, marginBottom:'1.25rem' }}>Ready to make your technology work for you? Get in touch for a free, no-obligation conversation.</p>
+            <a href="#contact" className="btn-primary" style={{ fontSize:'0.875rem' }}>Get a Free Quote</a>
+            <div style={{ marginTop:'1.5rem', display:'inline-flex', alignItems:'center', gap:'0.5rem', padding:'0.5rem 0.875rem', borderRadius:'999px', border:'1px solid var(--border)', background:'var(--bg-card)', fontSize:'0.78rem', color:'var(--text-muted)' }}>
+              <span style={{ width:'0.5rem', height:'0.5rem', borderRadius:'50%', background:'var(--emerald)', boxShadow:'0 0 6px var(--emerald)', display:'inline-block' }}/>
+              London, United Kingdom
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
-          <p>© {new Date().getFullYear()} MyC Technologies. All rights reserved.</p>
-          <p className="italic">[Privacy policy & terms — add when ready]</p>
+        <div className="section-divider" style={{ marginBottom:'1.75rem' }}/>
+
+        <div style={{ display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'space-between', gap:'0.875rem' }}>
+          <p style={{ fontSize:'0.82rem', color:'var(--text-subtle)' }}>© {year} MyC Technologies. All rights reserved.</p>
+          <div style={{ display:'flex', flexWrap:'wrap', gap:'1.5rem' }}>
+            {['Services','Portfolio','Contact'].map(label => (
+              <a key={label} href={`#${label.toLowerCase()}`} className="footer-link" style={{ fontSize:'0.82rem' }}>{label}</a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

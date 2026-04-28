@@ -1,23 +1,31 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+  weight: ['400','500','600','700'],
 })
 
-const SITE_URL = 'https://myctechnologies.com'
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space',
+  display: 'swap',
+  weight: ['400','500','600','700'],
+})
+
+const SITE_URL  = 'https://myctechnologies.com'
 const SITE_NAME = 'MyC Technologies'
-const TITLE = 'MyC Technologies | IT Services & Cybersecurity London'
+const TITLE     = 'MyC Technologies | IT Services & Cybersecurity London'
 const DESCRIPTION =
   'London-based IT services for individuals and small businesses. Computer repair, cybersecurity, website design, virus removal, and data recovery. Practical help, plain English.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: TITLE,
+    default:  TITLE,
     template: `%s | ${SITE_NAME}`,
   },
   description: DESCRIPTION,
@@ -35,42 +43,31 @@ export const metadata: Metadata = {
     'security policy development',
     'desktop customisation London',
   ],
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
-  creator: SITE_NAME,
+  authors:  [{ name: SITE_NAME, url: SITE_URL }],
+  creator:  SITE_NAME,
   robots: {
-    index: true,
-    follow: true,
+    index: true, follow: true,
     googleBot: { index: true, follow: true },
   },
-  alternates: {
-    canonical: SITE_URL,
-  },
+  alternates: { canonical: SITE_URL },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
   },
   openGraph: {
-    title: TITLE,
+    title:    TITLE,
     description: DESCRIPTION,
-    url: SITE_URL,
+    url:      SITE_URL,
     siteName: SITE_NAME,
-    locale: 'en_GB',
-    type: 'website',
-    // images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'MyC Technologies' }],
-    // ↑ Uncomment and add real OG image before launch
+    locale:   'en_GB',
+    type:     'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: TITLE,
+    card:        'summary_large_image',
+    title:       TITLE,
     description: DESCRIPTION,
-    // images: ['/og-image.png'],
-    // ↑ Uncomment when OG image is added
   },
 }
 
-// Prevent flash of wrong colour scheme before React hydrates.
-const themeInitScript = `(function(){try{var s=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.classList.toggle('dark',(s??p)==='dark')}catch(e){}})();`
-
-// JSON-LD LocalBusiness schema — only known, verifiable facts included.
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': ['LocalBusiness', 'ProfessionalService'],
@@ -84,46 +81,32 @@ const localBusinessSchema = {
     '@type': 'PostalAddress',
     addressLocality: 'London',
     addressCountry: 'GB',
-    // streetAddress and postalCode intentionally omitted — not confirmed
   },
-  areaServed: {
-    '@type': 'City',
-    name: 'London',
-  },
+  areaServed: { '@type': 'City', name: 'London' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'IT Services',
     itemListElement: [
-      'Computer Repair',
-      'Website Design',
-      'Cybersecurity Assessments',
-      'Desktop Customisation',
-      'Virus and Malware Removal',
-      'Data Backup',
-      'Data Recovery',
-      'Hardware Checks',
-      'Security Policy Development',
-    ].map((name) => ({
+      'Computer Repair','Website Design','Cybersecurity Assessments',
+      'Desktop Customisation','Virus and Malware Removal',
+      'Data Backup','Data Recovery','Hardware Checks','Security Policy Development',
+    ].map(name => ({
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name },
     })),
   },
-  // openingHours, priceRange, logo, sameAs intentionally omitted — not confirmed
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body
-        className={`${inter.variable} font-sans antialiased bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-200`}
-      >
+      <body className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
         {children}
       </body>
     </html>
