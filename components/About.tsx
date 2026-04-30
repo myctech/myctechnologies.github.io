@@ -29,13 +29,8 @@ export default function About() {
           </div>
 
           <div style={{ position:'relative', zIndex:1, display:'flex', alignItems:'center', justifyContent:'center', padding:'2rem 0' }}>
-            <Image
-              src="/logovertical.png"
-              alt="MyC Technologies"
-              width={1633}
-              height={1080}
-              className="w-40 h-auto"
-            />
+            <Image src="/logovertical.png"      alt="MyC Technologies" width={1633} height={1080} className="w-40 h-auto logo-white"/>
+            <Image src="/logoverticalblack.png" alt="MyC Technologies" width={1633} height={1080} className="w-40 h-auto logo-black"/>
           </div>
 
           <div style={{ position:'relative', zIndex:1, display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'0.75rem' }}>
