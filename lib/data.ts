@@ -111,7 +111,7 @@ export const portfolioItems: PortfolioProject[] = [
     headline: 'A practical security review that gave the business confidence — and documentation to prove it.',
     tags:     ['Risk Assessment', 'Network Security', 'Access Control', 'Patching Review', 'Policy Documentation'],
     challenge: 'A small business was expanding into work with regulated clients who required evidence of basic cyber hygiene before signing contracts. The team had no formal security policies, mixed personal and business device use, and no clear picture of where their actual risks sat.',
-    approach:  'We conducted a structured review covering network configuration, device patching status, password and access control practices, software inventory, and data handling. Findings were grouped by risk level with plain-English explanations and specific, prioritised remediation steps — not a generic checklist.',
+    approach:  'We conducted a structured review covering network configuration, device patching status, credential and access control practices, software inventory, and data handling. Findings were grouped by risk level with plain-English explanations and specific, prioritised remediation steps — not a generic checklist.',
     outcome:   'The business resolved its highest-risk findings within two weeks, produced a security policy document from our recommendations, and successfully passed its client onboarding review. They now have a clear baseline to maintain and can evidence their security posture to future clients.',
   },
 ]
