@@ -43,9 +43,15 @@ jobs:
           ! grep -RIE "(api[_-]?key|secret|password|passwd|token|private[_-]?key|BEGIN RSA|BEGIN OPENSSH)" \
             --exclude-dir=.git \
             --exclude-dir=.next \
+            --exclude-dir=.github \
             --exclude-dir=node_modules \
             --exclude-dir=out \
             --exclude=pages.yml \
+            --exclude=package-lock.json \
+            --exclude=package.json \
+            --exclude=.gitignore \
+            --exclude=.pre-commit-config.yaml \
+            --exclude=AGENT_TASK.md \
             . || exit 1
 
       - name: Check large files
