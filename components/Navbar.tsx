@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 
 const navLinks = [
   { label:'Services',  href:'#services'  },
@@ -14,6 +14,19 @@ const navLinks = [
 export default function Navbar() {
   const [open,     setOpen]     = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [light,    setLight]    = useState(false)
+
+  useEffect(() => {
+    const stored = localStorage.getItem('myc-theme')
+    if (stored === 'light') { document.documentElement.classList.add('light'); setLight(true) }
+  }, [])
+
+  function toggleTheme() {
+    const next = !light
+    setLight(next)
+    if (next) { document.documentElement.classList.add('light');    localStorage.setItem('myc-theme', 'light') }
+    else       { document.documentElement.classList.remove('light'); localStorage.setItem('myc-theme', 'dark')  }
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -64,6 +77,11 @@ export default function Navbar() {
 
         {/* Controls */}
         <div style={{ display:'flex', alignItems:'center', gap:'0.625rem' }}>
+          <button onClick={toggleTheme} aria-label={light ? 'Switch to dark mode' : 'Switch to light mode'} style={pill}>
+            {light
+              ? <Moon style={{width:'1.125rem',height:'1.125rem'}}/>
+              : <Sun  style={{width:'1.125rem',height:'1.125rem'}}/>}
+          </button>
           <a href="#contact" className="btn-primary hide-mobile" style={{ padding:'0.625rem 1.25rem', fontSize:'0.875rem' }}>Get a Quote</a>
           <button onClick={() => setOpen(v => !v)} aria-label="Toggle menu" style={pill} className="show-mobile">
             {open ? <X style={{width:'1.125rem',height:'1.125rem'}}/> : <Menu style={{width:'1.125rem',height:'1.125rem'}}/>}
